@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="time.css">
+</head>
+<body>
+    <div class="dropdown">
+        <h3>Please Enter a Number</h3>
+        <form action="">
+            <select name="" id="input">
+                <option value="seconds">seconds</option>
+                <option value="minute">minute</option>
+                <option value="hour">hour</option>
+                <option value="day">day</option>
+                <option value="week">week</option>
+                <option value="month">month</option>
+                <option value="year">year</option>
+            </select>
+            <input type="text" style="width: 50px;" id="qst">
+            <select name="" id="output">
+                <option value="seconds">seconds</option>
+                <option value="minute">minute</option>
+                <option value="hour">hour</option>
+                <option value="day">day</option>
+                <option value="week">week</option>
+                <option value="month">month</option>
+                <option value="year">year</option>
+            </select>
+            <input type="text" style="width: 50px;" id="ans">
+            <h3 id="answer"></h3>
+        </form>
+        <button style="width: 75px; align-self: center; margin-top: 50px; height: 25px; border-radius: 15px;" id="btn">Submit</button>
+        <div style="display: flex; justify-content: space-around;">
+            <button style="border-radius: 15px; font-size: large;"><a href="distance.html" style="text-decoration: none; color: black;">Distance</a></button>
+            <button style="border-radius: 15px; font-size: large;"><a href="mass.html" style="text-decoration: none; color: black;">mass</a></button>
+        </div>
+    </div>
+</body>
+<script>
+    
+    document.getElementById("btn").onclick = (()=>{
+        // define our variables
+        let inputUnit = document.getElementById("input").value;
+        let outputUnit = document.getElementById("output").value;
+        let userValue = document.getElementById("qst").value;
+        let expectedResult = document.getElementById("ans").value;
+
+        // conversion when user input is in seconds
+         if(inputUnit === "seconds"){
+            if(outputUnit === "seconds"){
+                expectedResult = userValue;
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "minute"){
+                expectedResult = userValue/60
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "hour"){
+                expectedResult = userValue/3600
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "day"){
+                expectedResult = (userValue/86400).toFixed(3)
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "week"){
+                expectedResult = (userValue/604800).toFixed(3)
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "month"){
+                expectedResult = (userValue/2419200).toFixed(3)
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "year"){
+                expectedResult = (userValue/29030400).toFixed(3)
+                document.getElementById("ans").value = expectedResult
+            }
+         }
+         // conversion when user input is in minute
+         else if (inputUnit === "minute"){
+            if(outputUnit === "seconds"){
+                expectedResult = userValue*60;
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "minute"){
+                expectedResult = userValue
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "hour"){
+                expectedResult = userValue/60
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "day"){
+                expectedResult = (userValue/1440).toFixed(3)
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "week"){
+                expectedResult = (userValue/10080).toFixed(3)
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "month"){
+                expectedResult = (userValue/40320).toFixed(3)
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "year"){
+                expectedResult = (userValue/483840).toFixed(3)
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "decade"){
+                expectedResult = (userValue/4838400).toFixed(3)
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "century"){
+                expectedResult = (userValue/48384000).toFixed(3)
+                document.getElementById("ans").value = expectedResult
+            }
+         }
+        //  conversion when user input is in hours
+         else if (inputUnit === "hour"){
+            if(outputUnit === "seconds"){
+                expectedResult = userValue*3600;
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "minute"){
+                expectedResult = userValue*60
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "hour"){
+                expectedResult = userValue
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "day"){
+                expectedResult = (userValue/24).toFixed(3)
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "week"){
+                expectedResult = (userValue/168).toFixed(3)
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "month"){
+                expectedResult = (userValue/672).toFixed(3)
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "year"){
+                expectedResult = (userValue/8064).toFixed(3)
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "decade"){
+                expectedResult = (userValue/80640).toFixed(3)
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "century"){
+                expectedResult = (userValue/806400).toFixed(3)
+                document.getElementById("ans").value = expectedResult
+            }
+         }
+         // conversion when user input is in day
+         else if (inputUnit === "day"){
+            if(outputUnit === "seconds"){
+                expectedResult = (userValue*86400).toFixed(1);
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "minute"){
+                expectedResult = (userValue*1440).toFixed(1)
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "hour"){
+                expectedResult = (userValue*24).toFixed(1)
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "day"){
+                expectedResult = userValue;
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "week"){
+                expectedResult = (userValue/7).toFixed(1)
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "month"){
+                expectedResult = (userValue/28).toFixed(1)
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "year"){
+                expectedResult = (userValue/365).toFixed(1)
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "decade"){
+                expectedResult = (userValue/3650).toFixed(1)
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "century"){
+                expectedResult = (userValue/36500).toFixed(1)
+                document.getElementById("ans").value = expectedResult
+            }
+         }
+         // conversion when user input is in week
+         else if (inputUnit === "week"){
+            if(outputUnit === "seconds"){
+                expectedResult = (userValue*604800).toFixed(1);
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "minute"){
+                expectedResult = (userValue*10080).toFixed(1)
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "hour"){
+                expectedResult = (userValue*168).toFixed(1)
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "day"){
+                expectedResult = userValue*7;
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "week"){
+                expectedResult = userValue
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "month"){
+                expectedResult = (userValue/4).toFixed(1)
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "year"){
+                expectedResult = (userValue/52).toFixed(1)
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "decade"){
+                expectedResult = (userValue/520).toFixed(1)
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "century"){
+                expectedResult = (userValue/5200).toFixed(1)
+                document.getElementById("ans").value = expectedResult
+            }
+        }
+        // conversion when user input is in month
+        else if (inputUnit === "month"){
+            if(outputUnit === "seconds"){
+                expectedResult = (userValue*2419200).toFixed(1);
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "minute"){
+                expectedResult = (userValue*40320).toFixed(1)
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "hour"){
+                expectedResult = (userValue*672).toFixed(1)
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "day"){
+                expectedResult = userValue*28;
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "week"){
+                expectedResult = userValue*7
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "month"){
+                expectedResult = userValue;
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "year"){
+                expectedResult = (userValue/12).toFixed(1)
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "decade"){
+                expectedResult = (userValue/120).toFixed(1)
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "century"){
+                expectedResult = (userValue/1200).toFixed(3)
+                document.getElementById("ans").value = expectedResult
+            }
+        }
+        else if (inputUnit === "year"){
+            if(outputUnit === "seconds"){
+                expectedResult = (userValue*29030400).toFixed(3);
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "minute"){
+                expectedResult = (userValue*483840).toFixed(3)
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "hour"){
+                expectedResult = (userValue*8064).toFixed(3)
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "day"){
+                expectedResult = (userValue*336).toFixed(3);
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "week"){
+                expectedResult = userValue*56
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "month"){
+                expectedResult = userValue*12;
+                document.getElementById("ans").value = expectedResult
+            }
+            else if(outputUnit === "year"){
+                expectedResult = userValue
+                document.getElementById("ans").value = expectedResult
+            }
+            }
+    })
+    
+</script>
+</html>

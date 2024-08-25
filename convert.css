@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.center{
+    border: 10px solid gray;
+    background: linear-gradient(to right, #a02708, #93460a);
+    text-align: center;
+    height: 70%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+button a{
+    text-decoration: none;
+    color: rgb(28, 16, 1);
+    background: transparent;
+    font-weight: 300;
+    font-size: large;
+    
+}
+section div{
+    margin-top: 15px;
+    padding-top: 45px;
+}
+button{
+   border-radius: 10px;
+}

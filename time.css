@@ -1,0 +1,25 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.dropdown{
+    border: 10px solid gray;
+    background: linear-gradient(to right, #a02708, #93460a);
+    text-align: center;
+    height: 45%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+form{
+    margin: 15px;
+}
+select{
+    font-size: large;
+    height: 23px;
+}
+input{
+    height: 23px;
+}

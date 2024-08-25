@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="time.css">
+</head>
+<body>
+    <div class="dropdown">
+        <h3>Please Enter a Number</h3>
+        <form action="">
+            <select name="" id="input">
+                <option value="g">gram</option>
+                <option value="kg">kilogram</option>
+                <option value="pd">pound</option>
+            </select>
+            <input type="text" style="width: 50px;" id="qst">
+            <select name="" id="output">
+                <option value="g">gram</option>
+                <option value="kg">kilogram</option>
+                <option value="pd">pound</option>
+            </select>
+            <input type="text" style="width: 50px;" id="ans">
+        </form>
+        <button style="width: 50px; align-self: center; margin-top: 70px; width: 65px; margin-bottom: 10px;" id="btn3">Submit</button>
+        <div style="display: flex; justify-content: space-around;">
+            <button style="border-radius: 15px; font-size: large;"><a href="time.html" style="text-decoration: none; color: black;">Time conversion</a></button>
+            <button style="border-radius: 15px; font-size: large;"><a href="distance.html" style="text-decoration: none; color: black;">distance</a></button>
+        </div>
+    </div>
+</body>
+<script>
+        document.getElementById("btn3").addEventListener("click", ()=>{
+            // define our variables
+        let inputUnit = document.getElementById("input").value;
+        let outputUnit = document.getElementById("output").value;
+        let userValue = document.getElementById("qst").value;
+        let expectedResult = document.getElementById("ans").value;
+        if(inputUnit === "g"){
+            if(outputUnit === "g"){
+                expectedResult = userValue;
+                document.getElementById("ans").value = expectedResult;
+                
+            }else if(outputUnit === "kg"){
+                expectedResult = userValue/1000;
+                document.getElementById("ans").value = expectedResult;
+            }else if(outputUnit === "pd"){
+                expectedResult = userValue/500;
+                document.getElementById("ans").value = expectedResult;
+            }
+        }else if(inputUnit === "kg"){
+            if(outputUnit === "g"){
+                expectedResult = userValue*1000;
+                document.getElementById("ans").value = expectedResult;
+                
+            }else if(outputUnit === "kg"){
+                expectedResult = userValue;
+                document.getElementById("ans").value = expectedResult;
+            }else if(outputUnit === "pd"){
+                expectedResult = userValue*2.205;
+                document.getElementById("ans").value = expectedResult;
+            }
+        }else{
+            if(outputUnit === "g"){
+                expectedResult = userValue*453.592;
+                document.getElementById("ans").value = expectedResult;
+                
+            }else if(outputUnit === "kg"){
+                expectedResult = userValue/2.205;
+                document.getElementById("ans").value = expectedResult;
+            }else if(outputUnit === "pd"){
+                expectedResult = userValue;
+                document.getElementById("ans").value = expectedResult;
+            }
+        }
+    })
+</script>
+</html>

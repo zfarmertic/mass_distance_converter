@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="time.css">
+</head>
+<body>
+    <div class="dropdown">
+        <h3>Please Enter a Number</h3>
+        <form action="">
+            <select name="" id="input">
+                <option value="cm">centimeter</option>
+                <option value="m">meter</option>
+                <option value="km">kilometer</option>
+                <option value="miles">miles</option>
+            </select>
+            <input type="text" style="width: 50px;" id="qst">
+            <select name="" id="output">
+                <option value="cm">centimeter</option>
+                <option value="m">meter</option>
+                <option value="km">kilometer</option>
+                <option value="miles">miles</option>
+            </select>
+            <input type="text" style="width: 50px;" id="ans">
+        </form>
+        <button style="width: 50px; align-self: center; margin-top: 70px; width: 65px; margin-bottom: 10px;" id="btn3">Submit</button>
+        <div style="display: flex; justify-content: space-around;">
+            <button style="border-radius: 15px; font-size: large;"><a href="time.html" style="text-decoration: none; color: black;">Time conversion</a></button>
+            <button style="border-radius: 15px; font-size: large;"><a href="mass.html" style="text-decoration: none; color: black;">mass</a></button>
+        </div>
+    </div>
+</body>
+<script>
+        document.getElementById("btn3").addEventListener("click", ()=>{
+            // define our variables
+        let inputUnit = document.getElementById("input").value;
+        let outputUnit = document.getElementById("output").value;
+        let userValue = document.getElementById("qst").value;
+        let expectedResult = document.getElementById("ans").value;
+        if(inputUnit === "cm"){
+            if(outputUnit === "cm"){
+                expectedResult = userValue;
+                document.getElementById("ans").value = expectedResult;
+                
+            }else if(outputUnit === "m"){
+                expectedResult = userValue/100;
+                document.getElementById("ans").value = expectedResult;
+            }else if(outputUnit === "km"){
+                expectedResult = userValue/100000;
+                document.getElementById("ans").value = expectedResult;
+            }else if(outputUnit === "miles"){
+                expectedResult = userValue/160934;
+                document.getElementById("ans").value = expectedResult;
+            }
+        }else if(inputUnit === "m"){
+            if(outputUnit === "cm"){
+                expectedResult = userValue*100;
+                document.getElementById("ans").value = expectedResult;
+                
+            }else if(outputUnit === "m"){
+                expectedResult = userValue;
+                document.getElementById("ans").value = expectedResult;
+            }else if(outputUnit === "km"){
+                expectedResult = userValue/1000;
+                document.getElementById("ans").value = expectedResult;
+            }else if(outputUnit === "miles"){
+                expectedResult = userValue/1609.34;
+                document.getElementById("ans").value = expectedResult;
+            }
+        }else if(inputUnit === "km"){
+            if(outputUnit === "cm"){
+                expectedResult = userValue*100000;
+                document.getElementById("ans").value = expectedResult;
+                
+            }else if(outputUnit === "m"){
+                expectedResult = userValue*1000;
+                document.getElementById("ans").value = expectedResult;
+            }else if(outputUnit === "km"){
+                expectedResult = userValue;
+                document.getElementById("ans").value = expectedResult;
+            }else if(outputUnit === "miles"){
+                expectedResult = userValue*0.621;
+                document.getElementById("ans").value = expectedResult;
+            }
+        }
+    })
+</script>
+</html>
